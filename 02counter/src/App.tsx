@@ -1,24 +1,6 @@
 import { useState } from "react";
 import "./App.css";
 
-// let hook: any[] = [];
-// let currentIndex = 0;
-
-// function myUseState<T>(initialValue: T): [T, (newValue: T) => void] {
-//   hook[currentIndex] = hook[currentIndex] ?? initialValue;
-
-//   const setStateIndex = currentIndex;
-
-//   const setValue = (newValue: T) => {
-//     hook[setStateIndex] = newValue;
-//     reRender();
-//   };
-
-//   const value = hook[currentIndex];
-//   currentIndex++;
-//   return [value, setValue];
-// }
-
 function App() {
   // eslint-disable-next-line prefer-const
   let [number, setNumber] = useState<number>(18);
@@ -27,8 +9,7 @@ function App() {
     if (number > 19) {
       alert("you cannot go above 20");
     } else {
-      number++;
-      setNumber(number);
+      setNumber(number + 1);
     }
   }
 
@@ -36,8 +17,7 @@ function App() {
     if (number < 1) {
       alert("you cannot go below 0");
     } else {
-      number--;
-      setNumber(number);
+      setNumber(number - 1);
     }
   }
 
@@ -57,6 +37,31 @@ function App() {
   );
 }
 
+export default App
+
+
+
+
+
+
+// let hook: any[] = [];
+// let currentIndex = 0;
+
+// function myUseState<T>(initialValue: T): [T, (newValue: T) => void] {
+//   hook[currentIndex] = hook[currentIndex] ?? initialValue;
+
+//   const setStateIndex = currentIndex;
+
+//   const setValue = (newValue: T) => {
+//     hook[setStateIndex] = newValue;
+//     reRender();
+//   };
+
+//   const value = hook[currentIndex];
+//   currentIndex++;
+//   return [value, setValue];
+// }
+
 
 // // ---- Custom Renderer ----
 // import ReactDOM from "react-dom/client";
@@ -71,5 +76,3 @@ function App() {
 // // Start custom render
 // reRender()
 
-
-export default App
